@@ -1,0 +1,38 @@
+.card {
+  @include flexTemplate(false, left, flex-start, 16px);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.cardInner {
+  @include flexTemplate(false, left, center, 16px);
+  @include adjustTemplate(0, 0, none, 100%, auto, false);
+  @include setRadius(8px);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include adjustTemplate(4px 16px, 0, none, 100%, auto, false);
+
+    &:hover {
+      @include setBackground(
+        map-get($theme, "palette", "grayscale", "mercury")
+      );
+      cursor: pointer;
+    }
+  }
+}
+
+.cardName {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontColor(map-get($theme, "palette", "primary"));
+}
+
+.cardSubtitle {
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+}
+
+.profilePicFriend > img {
+  @include adjustTemplate(0, 0, none, 40px, 40px);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include adjustTemplate(0, 0, none, 60px, 60px);
+  }
+}

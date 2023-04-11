@@ -1,0 +1,52 @@
+/**
+  Form container
+*/
+.form {
+  @include flexTemplate(true);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+/**
+  Form inner
+*/
+.formInner {
+  @include flexTemplate(true, left, center, map-get($theme, "base", "gap-32"));
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+/**
+  A container containing all inputs
+*/
+.inputFields {
+  @include flexTemplate(true, left, center, map-get($theme, "base", "gap-16"));
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+/**
+  A container containing all submission elements
+*/
+.submitContainer {
+  @include flexTemplate(true, left, center, map-get($theme, "base", "gap-8"));
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+/**
+  A container containing the submit button
+*/
+.submitInner {
+  @include flexTemplate(true);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.submitInner > button {
+  @include adjustTemplate(10px 0, 0, none, 100%, auto, false);
+}
+
+/**
+  The error message associated with the form
+*/
+.warning {
+  @include fontColor(map-get($theme, "palette", "error"));
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+  @include fontAlign(center);
+}

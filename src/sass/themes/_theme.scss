@@ -1,0 +1,68 @@
+$theme: (
+  palette: (
+    "primary": rgb(0, 204, 156),
+    "secondary": rgb(217, 232, 227),
+    "grayscale": (
+      "black": rgb(0, 0, 0),
+      "mine-shaft": rgb(39, 39, 39),
+      "gray": rgb(129, 129, 129),
+      "dusty-gray": rgb(151, 151, 151),
+      "silver": rgb(201, 201, 201),
+      "mercury": #e6e6e6,
+      "alabaster": rgb(249, 249, 249),
+      "white": rgb(255, 255, 255),
+    ),
+    "error": rgb(251, 126, 126),
+  ),
+  base: (
+    "lg-padding": 32px,
+    "sm-padding": 24px,
+    "gap-32": 32px,
+    "gap-16": 16px,
+    "gap-8": 8px,
+  ),
+  breakpoints: (
+    "large": 768px,
+  ),
+  font-sizes: (
+    "h1-heading": (
+      "large": 30px,
+      "small": 26px,
+    ),
+    "h2-heading": (
+      "large": 28px,
+      "small": 24px,
+    ),
+    "h3-heading": (
+      "large": 26px,
+      "small": 22px,
+    ),
+    "h4-heading": (
+      "large": 24px,
+      "small": 20px,
+    ),
+    "h5-heading": (
+      "large": 20px,
+      "small": 18px,
+    ),
+    "h6-heading": (
+      "large": 18px,
+      "small": 16px,
+    ),
+    "body": (
+      "large": 16px,
+      "small": 14px,
+    ),
+    "subtitle": (
+      "large": 14px,
+      "small": 12px,
+    ),
+    "sm-subtitle": (
+      "large": 12px,
+      "small": 10px,
+    ),
+  ),
+  font-family: (
+    "sans-serif": "Poppins",
+  ),
+);

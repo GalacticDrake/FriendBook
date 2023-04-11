@@ -1,0 +1,42 @@
+/**
+  The outer layer that encapsulates every login element
+*/
+.loginSection {
+  @include flexTemplate(true, left, center, normal, 1);
+  @include adjustTemplate(map-get($theme, "base"));
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    height: calc(100vh - 67px);
+    justify-content: center;
+  }
+}
+
+/**
+  The container that presents itself as a container for all elements
+*/
+.loginContainer {
+  @include flexTemplate(true, left, center, map-get($theme, "base", "gap-32"));
+  @include adjustTemplate(0, 0, 320px, 100%);
+}
+
+/**
+  The section that contains all login header elements
+*/
+.loginHeader {
+  @include flexTemplate(true);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+/**
+  The section title
+*/
+.loginTitle {
+  @include fontType(map-get($theme, "font-sizes", "h1-heading"));
+}
+
+/**
+  The section subtitle
+*/
+.loginSubtitle {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+}

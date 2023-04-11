@@ -1,0 +1,50 @@
+/**
+  The container that presents itself as a container for all elements
+*/
+.friendsContainer {
+  @include flexTemplate(true, left, center, normal, 1);
+  @include adjustTemplate(map-get($theme, "base"));
+}
+
+/**
+  The container that encapsulates all header elements
+*/
+.friendsHeaderTitle {
+  @include fontType(map-get($theme, "font-sizes", "h3-heading"));
+}
+
+.friendsHeaderSubtitle {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "gray"));
+}
+
+/**
+  The container that encapsulates the focus content
+*/
+.friendsListContainer {
+  @include flexTemplate(true, left, flex-start, 8px);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.friendsInner {
+  @include flexTemplate(true, left, flex-start, 24px);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.friendsListInfo {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "gray"));
+  @include adjustTemplate(0, 0, auto, 100%, auto, false);
+
+  border-bottom: solid 1px map-get($theme, "palette", "grayscale", "silver");
+  padding-bottom: 8px;
+}
+
+.friendsContent {
+  @include flexTemplate(true, left, flex-start, 4px);
+  @include adjustTemplate(16px 0, 0, none, 100%, auto, false);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include flexTemplate(true, left, flex-start, 16px);
+  }
+}

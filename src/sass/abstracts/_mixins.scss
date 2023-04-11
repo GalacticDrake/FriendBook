@@ -1,0 +1,126 @@
+/**
+  Mixins
+  -> Use variables declared in other scss files unless not possible / non-existant
+*/
+
+// Flex template
+// 1. column - should children be arranged in column: true/false
+// 2. justify - optional, justify-contents: string
+// 3. align - optional, align-items: string
+// 4. gap - optional, gap between each child: number
+// 5. flexGrow - optional, specifies whether children should grow to largest width/height of sibling: number
+@mixin flexTemplate(
+  $column,
+  $justify: left,
+  $align: flex-start,
+  $gap: normal,
+  $flexGrow: 0
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-grow: $flexGrow;
+
+  @if $column {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+}
+
+// Adjustments to template
+// 1. padding - optional, padding of template: number
+// 2. margin - optional, margin of template: number
+// 3. maxWidth - optional, max-width of template: number
+// 4. width - optional, width of the template: number
+// 5. height - optional, height of the template: number
+@mixin adjustTemplate(
+  $padding: 0,
+  $margin: 0,
+  $maxWidth: none,
+  $width: auto,
+  $height: auto,
+  $template: true
+) {
+  max-width: $maxWidth;
+  width: $width;
+  height: $height;
+
+  margin: $margin;
+
+  @if ($padding != 0 and $template) {
+    padding: map-get($padding, "sm-padding");
+
+    @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+      padding: map-get($padding, "lg-padding");
+    }
+  } @else {
+    padding: $padding;
+  }
+}
+
+// Text type
+// 1. type - size of font: number
+// 2. serif - optional, typography: true/false
+@mixin fontType($type, $serif: false, $weight: normal) {
+  font-size: map-get($type, "small");
+  font-weight: $weight;
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    font-size: map-get($type, "large");
+  }
+
+  @if $serif {
+    font-family: $defaultSansSerif;
+  }
+}
+
+// Design of buttons
+// 1. background - background: string
+// 2. textColor - text colour: string
+// 3. padding - padding: number "(y)size (x)size"
+// 4. weight - font weight: number/string
+// 5. radius - border radius: number
+// 6. fullWidth - optional, should the button be full width: true/false
+@mixin customButton(
+  $background,
+  $textColor,
+  $fontSize,
+  $padding,
+  $weight,
+  $radius,
+  $serif: false,
+  $fullWidth: false
+) {
+  background: $background;
+  color: $textColor;
+  border-radius: $radius;
+  padding: $padding;
+
+  @include fontType($fontSize, $serif, $weight);
+
+  @if $fullWidth {
+    width: 100%;
+  }
+}
+
+// Text colour
+@mixin fontColor($color) {
+  color: $color;
+}
+
+// Align text
+@mixin fontAlign($align) {
+  text-align: $align;
+}
+
+// Background colour
+@mixin setBackground($background) {
+  background: $background;
+}
+
+// Set border radius
+@mixin setRadius($radius) {
+  border-radius: $radius;
+}

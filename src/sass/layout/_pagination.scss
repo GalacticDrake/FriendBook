@@ -1,0 +1,54 @@
+.paginationContainer {
+  @include flexTemplate(true, left, flex-start, 8px);
+  @include adjustTemplate(0, 0, none, 100%);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include flexTemplate(false, left, center, 16px);
+  }
+}
+
+.paginationInner {
+  @include flexTemplate(true, left, flex-start, normal, 1);
+  @include adjustTemplate(0, 0, none, auto, 100%);
+}
+
+.searchContainer {
+  @include flexTemplate(true, left, flex-start, 4px);
+  @include adjustTemplate(0, 0, none, 100%);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include adjustTemplate(0, 0, none, auto, 100%);
+  }
+}
+
+.pageSearch {
+  @include flexTemplate(true, left, flex-start, 8px);
+  @include adjustTemplate(0, 0, none, 100%);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include flexTemplate(false, left, center, 8px);
+    @include adjustTemplate(0, 0, none, auto, 100%);
+  }
+}
+
+.pageSearch input {
+  @include adjustTemplate(4px 8px, 0, none, 100%, 36.5px, false);
+  border: solid 1px map-get($theme, "palette", "grayscale", "silver");
+
+  &:focus {
+    border: solid 1px map-get($theme, "palette", "primary");
+    outline: none;
+  }
+}
+
+.pageSearchLabel {
+  @include flexTemplate(false);
+  @include adjustTemplate(0, 0, none, auto, 100%);
+
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "gray"));
+}
+
+.pageSearchInner {
+  @include flexTemplate(false, left, flex-start, 8px);
+}

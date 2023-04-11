@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalMain {
+  position: fixed;
+  background: white;
+  width: calc(100% - 48px);
+  max-width: 400px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+  border-radius: 8px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 32px;
+  }
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}
+
+.modalContents {
+  @include flexTemplate(true, left, center, 24px);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.modalHeader {
+  @include flexTemplate(true, left, center);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.modalName {
+  @include fontType(map-get($theme, "font-sizes", "h6-heading"));
+  @include fontColor(map-get($theme, "palette", "primary"));
+}
+
+.modalSubtitle {
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+  @include fontAlign(center);
+}
+
+.modalDetail {
+  @include flexTemplate(true, left, flex-start, 8px);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.modalDetailSubject {
+  @include fontType(map-get($theme, "font-sizes", "subtitle"), false, bold);
+}
+
+.modalDetailInner {
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.modalRow {
+  @include flexTemplate(false);
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.modalDetailTitle {
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "dusty-gray"));
+  flex: 1;
+}
+
+.modalDetailContent {
+  @include fontType(map-get($theme, "font-sizes", "subtitle"));
+  flex: 2;
+}

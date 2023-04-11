@@ -1,0 +1,119 @@
+.userInfoWrapper {
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include flexTemplate(false);
+  }
+}
+
+/**
+  Green container containing the user's info
+*/
+.greenContainer {
+  @include setBackground(map-get($theme, "palette", "secondary"));
+  @include adjustTemplate(24px, 0, auto, 100%, auto, false);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    min-height: calc(100vh - 62px);
+    @include adjustTemplate(24px, 0, 300px, 100%, auto, false);
+  }
+}
+
+/**
+  Green container inner
+*/
+.greenInner {
+  @include flexTemplate(true, left, center, 24px);
+}
+
+/**
+  Profile picture
+*/
+.profilePic {
+  @include flexTemplate(false);
+}
+
+.profilePic > img {
+  border-radius: 50px;
+}
+
+/**
+  Introduction
+*/
+.greet {
+  @include flexTemplate(true, left, center);
+}
+
+.greetTitle {
+  @include fontType(map-get($theme, "font-sizes", "h5-heading"), false, bold);
+}
+
+.greetSubtitle {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontAlign(center);
+}
+
+/**
+  Button container and buttons
+*/
+.buttonBox {
+  @include adjustTemplate(0, 0, none, 100%);
+}
+
+.buttonGreen {
+  @include customButton(
+    map-get($theme, "palette", "primary"),
+    white,
+    map-get($theme, "font-sizes", "body"),
+    12px 0,
+    normal,
+    50px,
+    false,
+    true
+  );
+  @include fontAlign(center);
+}
+
+/**
+  User Info
+  -> nameGreet and welcomeGreet are elements of the header
+*/
+.userInfoContainer {
+  @include flexTemplate(true, left, flex-start, 24px);
+  @include adjustTemplate(24px, 0, none, 100%, auto, false);
+}
+
+.nameGreet {
+  @include fontType(map-get($theme, "font-sizes", "h3-heading"));
+}
+
+.welcomeGreet {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "gray"));
+}
+
+.infoContainer {
+  @include flexTemplate(true, left, flex-start, 8px);
+  @include adjustTemplate(0, 0, none, 100%, auto, false);
+}
+
+.infoInner {
+  @include flexTemplate(true, left, flex-start, 4px);
+  @include adjustTemplate(0, 0, none, 100%, auto, false);
+}
+
+.infoSectTitle {
+  @include fontType(map-get($theme, "font-sizes", "body"), false, bold);
+}
+
+.infoRow {
+  @include flexTemplate(false);
+}
+
+.infoTitle {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+  @include fontColor(map-get($theme, "palette", "grayscale", "dusty-gray"));
+  @include adjustTemplate(0, 0, none, 100px);
+}
+
+.infoContent {
+  @include fontType(map-get($theme, "font-sizes", "body"));
+}

@@ -1,0 +1,32 @@
+/**
+ * For padding
+*/
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * Eliminates default margin on html and body
+*/
+html,
+body {
+  margin: 0;
+}
+
+/**
+ * Default properties
+*/
+body {
+  font-family: map-get($theme, "font-family", "sans-serif");
+  @include setBackground(map-get($theme, "palette", "grayscale", "alabaster"));
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-family: map-get($theme, "font-family", "sans-serif");
+}

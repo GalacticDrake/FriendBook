@@ -1,0 +1,15 @@
+.navbar {
+  @include flexTemplate(false, left, center);
+  @include adjustTemplate(16px 24px, 0, none, 100%, auto, false);
+  @include setBackground(white);
+
+  @media only screen and (min-width: map-get($theme, "breakpoints", "large")) {
+    @include adjustTemplate(16px 32px, 0, none, 100%, auto, false);
+  }
+}
+
+.logo {
+  @include flexTemplate(true, left, flex-start, normal, 1);
+  @include fontColor(map-get($theme, "palette", "primary"));
+  @include fontType(map-get($theme, "font-sizes", "h4-heading"), false, bold);
+}
